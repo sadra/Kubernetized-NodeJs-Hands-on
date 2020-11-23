@@ -11,6 +11,8 @@ import { signupRouter } from './routes/signup';
 import { errorHandler } from './middlewares/error-handler';
 import { NotFoundError } from './errors/not-found.error';
 
+const PORT = process.env.PORT || 3001;
+
 const app = express();
 app.use(json());
 
@@ -37,8 +39,8 @@ const start = async () => {
     console.error(error);
   }
 
-  app.listen(3001, () => {
-    console.info('Service is running on port 3000!');
+  app.listen(PORT, () => {
+    console.info(`Service is running on port ${PORT}!`);
   });
 };
 
